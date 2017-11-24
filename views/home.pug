@@ -1,0 +1,16 @@
+html
+  head
+    title Chat
+    meta(charset="UTF-8")
+    meta(description = "Chat is a fully functional chat client inspired created with Node.js and Express.")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    include favicons.pug
+  body
+    include home-header.pug
+    h1#title Welcome To Chat
+    h2 About
+    p#about
+      | This is a chat client that was developed using Node.js. This program includes the ability to chat with friends. It incorporates a fully functional friend list, allowing you to make friends, block friends, and chat with anyone. 
+      a(href = "/signUp") Sign up
+      |  to get started!
+    link(rel = "stylesheet", href="/stylesheets/home.css" defer)

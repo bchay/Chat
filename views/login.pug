@@ -1,0 +1,38 @@
+doctype html
+html
+  head
+    title
+      | Log In
+    meta(charset = "UTF-8")
+    meta(description = "Login to your account")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel = "stylesheet", href="/stylesheets/login.css")
+    include favicons.pug
+  body
+    include home-header.pug
+    form#login(name = "logIn", method = "post", action = "/login")
+      p#loginMessage Login
+      label(for = "username") Username:
+      input#username(type = "text", required = "required", name = "username" maxlength = "20" value = handle pattern = "[a-zA-Z]+")
+      br
+      br
+      label(for="pass") Password:
+      input#pass(type = "password", required = "required", maxlength = "128" name = "pass", pattern = ".{8,128}")
+      br
+      br
+      button#submit(name = "submit") Submit
+      br
+      br
+      a#signup(href = "signUp") Create an Account
+      br
+      br
+      a#forgot(href = "#") Forgot your Password
+      br
+      br
+      a#home(href = "home") Home
+      br
+      br
+      div#errorMessage #{errorMessage}
+  script(src = "//code.jquery.com/jquery-2.1.1.min.js" defer)
+  script(src = "/javascripts/login.js" defer)
+  script(src = "//ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js" defer)

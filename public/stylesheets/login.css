@@ -1,0 +1,59 @@
+html, body {
+	height: 100%;
+	width: 100%;
+	font-weight: bold;
+	font-family: courier;
+	background: gray;
+	color: black;
+	margin: 0;
+}
+
+form {
+	height: 80%;
+	width: 90%;
+	margin: auto;
+  font-size: 1.3em;
+}
+
+#loginMessage {
+	font-size: 2em;
+	text-align: center;
+}
+
+label {
+	width: 40%;
+	float: left;
+	max-width: 200px;
+}
+
+label.error {
+	float: none;
+	color: red;
+	display: block;
+	width: fit-content;
+  background-color: black;
+  padding: 1%;
+  max-width: 100%;
+  margin-top: 3%;
+}
+
+input {
+	width: 40%;
+	max-width: 400px;
+	line-height: 1.8em;
+}
+
+#rememberMe, #remember {
+	width: auto;
+}
+
+button#submit {
+	background: #white;
+	font-weight: bold;
+	float: left;
+}
+
+#errorMessage {
+	width: 80%;
+  color: red;
+}

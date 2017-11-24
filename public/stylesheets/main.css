@@ -1,0 +1,254 @@
+html, body {
+	background-color: gray;
+	width: 100%;
+	height: 100%;
+	font-family: courier, serif;
+  margin: 0;
+}
+
+#messages {
+	background-color: white;
+	margin: 0;
+	padding: 0;
+	word-wrap: break-word;
+	text-align: left;
+  border: .25em solid black;
+  margin-left: 5%;
+}
+
+form {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+}
+
+#m {
+	width: 85%;
+	position: relative;
+  background-color: lightgray;
+  border: 0px;
+  padding: 3% 0;
+  box-sizing: border-box;
+  padding-left: 2%;
+}
+
+#m:disabled {
+  background-color: gray;
+}
+
+#chatButton {
+	float: right;
+  width: 15%;
+  color: white;
+	border: 0px;
+	font-weight: bold;
+	position: relative;
+  padding: 3% 0%;
+  box-sizing: border-box;
+}
+
+#menu {
+	text-align: center;
+	border: .25em solid black;
+	background-color: darkgray;
+	color: white;
+	font-size: 1em;
+}
+
+#friends {
+	width: 90%;
+	margin: 0 auto;
+	height: fit-content;
+  min-height: 15%;
+  max-height: 40%;
+  overflow-y: scroll;
+  background-color: #000000;
+	margin-top: 10%;
+	border: .2em solid white;
+}
+
+#friendUL {
+	height: 100%;
+	margin-bottom: 0;
+	margin-top: 0;
+	overflow-y: auto;
+  overflow-wrap: break-word;
+}
+
+
+li.friend {
+	position: relative;
+	text-align: left;
+	list-style: none;
+  user-select: none;
+}
+
+li.friend.online::before {
+  content: "\2713  ";
+  color: green;
+}
+
+li.friend:not(.online):before {
+  content: "\2715  ";
+  color: red;
+}
+
+.selected {
+	background-color: gray;
+}
+
+button {
+  background-color: black;
+  user-select: none;
+}
+
+#menu button {
+	border: .2em solid white;
+	height: 10%;
+	font-weight: bold;
+	margin-top: 15%;
+	line-height: 5%;
+	width: 40%;
+  color: white;
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, .5);
+}
+
+#chat:disabled {
+  background-color: lightgray;
+}
+
+button#remove {
+	display: none;
+}
+
+.heading {
+	text-align: center;
+	color: black;
+	margin-top: 10%;
+  font-size: 2em;
+}
+
+#error {
+	font-size: 1em;
+	word-wrap: break-word;
+}
+
+.tabs {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    overflow-y: scroll;
+}
+
+.tab-links:after {
+	display: block;
+	clear: both;
+	content: '';
+}
+
+.tab-links li {
+	margin: 0em .3em;
+	float: left;
+	list-style: none;
+}
+
+.tab-links a {
+    padding: .5em .8em;
+    display: inline-block;
+    background: gray;
+    font-weight: bold;
+    color: #4c4c4c;
+    transition: all linear 0.15s;
+}
+
+li.active span {
+	background: gray;
+	padding:.5em .8em;
+}
+
+.tab-links a:hover {
+    background: darkgray;
+    text-decoration:none;
+}
+
+.tab-links li:not(.active) a, a:hover {
+	background: white;
+	color: black;
+}
+
+.tab-content {
+	background: #white;
+}
+
+div.tab-content ul li {
+  margin: 5% auto;
+}
+
+.tab {
+    display: none;
+    list-style-type: none;
+    margin: 0;
+}
+
+.tab.active {
+    display: block;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 716px) {
+	#messages {
+		position: relative;
+		width: 90%;
+		height: 100%;
+		margin-top: 2%;
+    margin: 0 auto;
+	}
+
+	#menu {
+		margin: 5% auto;
+		padding: 0;
+		width: 90%;
+		height: 100%;
+		position: relative;
+	}
+}
+
+@media only screen and (min-width: 716px) {
+	#messages {
+		position: absolute;
+		width: 40%;
+		height: 80%;
+	}
+
+	#menu {
+		width: 40%;
+		height: 80%;
+		float: right;
+    margin-right: 5%;
+	}
+}
+
+@media only screen and (max-height: 400px) and (max-width: 770px) {
+    #messages {
+      position: relative;
+      margin: 0 auto;
+      width: 90%;
+      height: 100%;
+      margin-top: 2%;
+    }
+
+    #menu {
+      margin: 5% auto;
+      padding: 0;
+      width: 90%;
+      height: 200%;
+      position: relative;
+      margin-bottom: 2%
+    }
+
+    #friendsList {
+      margin-top: 6%;
+    }
+}

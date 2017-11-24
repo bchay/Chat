@@ -1,0 +1,37 @@
+doctype html
+html
+  head
+    title Sign Up
+    meta(charset = "UTF-8")
+    meta(description = "Sign up for an Account")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel = "stylesheet", href="/stylesheets/signUp.css")
+    include favicons.pug
+  body
+    include home-header.pug
+    form#signUp(name = "signUp", method = "post", action = "/signUp")
+      p#signUpMessage Sign Up
+      label(for = "username") Username: 
+      input#username(type = "text", required = "required", pattern = "[a-zA-Z]+", maxlength = "128" name = "username")
+      
+      label(for = "password") Password:
+      input#password(type = "password" required = "required" maxlength = "128" name = "password" pattern = ".{8,128}")
+      
+      label Password Strength:
+      canvas#passwordStrength
+      br
+      
+      label(for = "confirm") Confirm Password:
+      input#confirm(type = "password" required = "required" pattern = ".{8,128}" maxlength = "128" name = "confirm")
+      br
+
+      div#submitField
+        button#submit(type = "submit" onclick = "#" name = "submit") Submit
+        |  or 
+        a#login(href="login") Login
+
+      div#errorMessage #{errorMessage}
+  script(src = "//code.jquery.com/jquery-2.1.1.min.js" defer)
+  script(src = "./javascripts/signUp.js" defer)
+  script(src = "/javascripts/zxcvbn/zxcvbn.js" async defer)
+  script(src = "//ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js" defer)
