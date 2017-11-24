@@ -12,7 +12,7 @@ var static = require("./routes/static");
 
 var app = express();
 
-app.use(enforce.HTTPS({ trustProtoHeader: true }));
+if(process.env.ENV === "production") app.use(enforce.HTTPS({ trustProtoHeader: true }));
 
 app.use(compression());
 
