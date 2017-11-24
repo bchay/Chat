@@ -1,6 +1,6 @@
 # Pesterchum
 
-![Screenshot](https://raw.githubusercontent.com/bchay/Chat/master/images/Site-Screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/bchay/Chat/master/public/images/Site-Screenshot.png)
 
 This project is a fully functional chat client developed in Node.js using Express. It enables one to sign up for an acccount and to then send friend requests to other users. Messages are sent using Socket.IO, and chat occurs in realtime.
 
