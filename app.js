@@ -7,12 +7,12 @@ var session = require("client-sessions");
 var enforce = require('express-sslify');
 require('dotenv').config();
 
-app.use(enforce.HTTPS({ trustProtoHeader: true }));
-
 var index = require("./routes/index");
 var static = require("./routes/static");
 
 var app = express();
+
+app.use(enforce.HTTPS({ trustProtoHeader: true }));
 
 app.use(compression());
 
