@@ -1,4 +1,3 @@
-var debug = require('debug')('app');
 var app = require('../app');
 
 var UserModel = require("./../mongodb-models.js").users;

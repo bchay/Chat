@@ -4,7 +4,10 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var compression = require("compression");
 var session = require("client-sessions");
+var enforce = require('express-sslify');
 require('dotenv').config();
+
+app.use(enforce.HTTPS({ trustProtoHeader: true }));
 
 var index = require("./routes/index");
 var static = require("./routes/static");
@@ -20,8 +23,7 @@ app.set('view engine', 'pug');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public'))); // ,{maxage: 31550000000}));
-
+app.use(express.static(path.join(__dirname, 'public'), {maxage: 31550000000}));
 
 app.use(session({
 	cookieName: 'user',
@@ -43,7 +45,7 @@ app.use(function(req, res, next) {
 });
 
 //development error handler
-if (app.get('env') === 'development') {
+if (process.env.ENV === 'development') {
     app.use(function(err, req, res, next) {
       res.status(err.status || 500);
 		  res.render("error", {error: err});
@@ -53,7 +55,7 @@ if (app.get('env') === 'development') {
 //production error handler
 app.use(function(err, req, res, next) {
     res.status(err.status || 500);
-    if(res.status == 404) {
+    if(err.status === 404) {
 	   res.render("404");
     } else {
 	   res.render("error");

@@ -9,7 +9,7 @@ Create an account, and add a friend. You can then send messages to one another. 
 
 ### Installing
 
-You can use this program by going to [Chat](), or running your own version of the code. Once the code is cloned, run the `npm install` command. Then, start up a [MongoDB](https://www.mongodb.com/) database, with a dbpath option of `./data/db`, which runs at the /data/db folder of the cloned repository. Then, run `mongo mongo-config.js` from the root of the repository to properly configure the database. Create a file named .env, and add `COOKIE_SECRET=` and then a large, randomly generated string. Save this to the project root. Finally, run `npm start` to finish the setup and launch the program. Navigate to localhost:8080 to view the project. The mongodb server must be running simultaneously. 
+You can use this program by going to [Chat](https://bchay-chat.herokuapp.com/), or running your own version of the code. Once the code is cloned, run the `npm install` command. Next, create a folder in the respository called data, and a subfolder of db. Then, start up a [MongoDB](https://www.mongodb.com/) database, with a dbpath option of `./data/db`, which runs at the /data/db folder of the cloned repository. Then, run `mongo mongo-config.js` from the root of the repository to properly configure the database. Create a file named .env, and add `COOKIE_SECRET=` and then a large, randomly generated string. Save this to the project root. Finally, run `npm start` to finish the setup and launch the program. Navigate to localhost:8080 to view the project. The mongodb server must be running simultaneously. 
 
 ## Built With
 
